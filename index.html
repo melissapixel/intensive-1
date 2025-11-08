@@ -1,11 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Котики в тени</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+
+  <header>
+    <div class="logo">🐾 КотоТьма</div>
+    <nav>
+      <ul>
+        <li><a href="#gallery">Галерея</a></li>
+        <li><a href="#filter">Породы</a></li>
+        <li><a href="#newsletter">Подписка</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Добро пожаловать в мир тёмных котиков</h1>
+    <p>Здесь живут самые загадочные, пушистые и стильные коты — в окружении современного digital-уют.</p>
+    <button class="btn">Посмотреть всех</button>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <h2>Наши котики</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="images/брит.jpg" alt="Кот">
+        <div class="card-content">
+          <h3>Барон</h3>
+          <p>Чёрный британец с золотыми глазами. Любит дождь и джаз.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/сиам.jpg" alt="Кот">
+        <div class="card-content">
+          <h3>Луна</h3>
+          <p>Серебристая сиамка. Обожает лунные ночи и молоко.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/Без названия (8).jpg" alt="Кот">
+        <div class="card-content">
+          <h3>Теневой хвост</h3>
+          <p>Таинственный метис. Никто не знает, откуда он...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="filter" id="filter">
+    <h2>Фильтр по породам</h2>
+    <div class="filter-buttons">
+      <button class="filter-btn active">Все</button>
+      <button class="filter-btn">Британец</button>
+      <button class="filter-btn">Сиамская</button>
+      <button class="filter-btn">Мейн-кун</button>
+    </div>
+  </section>
+
+  <section class="newsletter" id="newsletter">
+    <h2>Подпишитесь на котиков</h2>
+    <form>
+      <input type="email" placeholder="Ваш email" required>
+      <button type="submit">Подписаться</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 КотоТьма. Все котики защищены тьмой.
+  </footer>
+
+  <script>
+    // Простой интерактив для кнопок фильтра
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        // В реальном проекте здесь была бы фильтрация карточек
+      });
+    });
+
+    // Базовая валидация формы
+    document.querySelector('.newsletter form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Спасибо за подписку! Котики уже спешат к вам 🐾');
+      e.target.reset();
+    });
+  </script>
+
 </body>
 </html>
